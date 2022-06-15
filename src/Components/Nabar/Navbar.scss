@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100&display=swap');
+
+.Navbar-Container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    padding: 0 25px;
+    .Navbar-Left{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        .Input-Box-Navabar{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1.5px solid lightgrey;
+            border-radius: 5px;
+            padding: 2px;
+            margin-left: 25px;
+            input{
+                border: none;
+                outline: none;
+                background-color: transparent;
+                font-weight: 15px;
+            }
+        }
+    }
+    .Navbar-Center{
+        flex: 1;
+        .Navbar-Nameblock {
+            font-size: 30px;
+            text-align: center;
+            font-weight: bold;
+            font-family: 'Urbanist', sans-serif;
+            margin-left: 25px;
+        }
+    }
+    .Navbar-Right{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .Navbar-Right-box{
+            margin-left: 25px; 
+        }
+    }
+}
+@media screen and (max-width:"480px") {
+    .Navbar-Container{
+        padding: 0px;
+        .Lang{
+            display: none;
+        }
+        .Input-Box-Navabar{
+            input{
+                width: 80px;
+            }
+        }
+        .Navbar-Center{
+            .Navbar-Nameblock{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .Navbar-Nameblock{
+                font-size: 19px ;
+            }
+        }
+        .Navbar-Right{
+            flex: 2;
+            justify-content: center;
+            .Navbar-Right-box{
+                font-size: 15px;
+                margin-left: 5px;
+            }
+        }
+    }
+}

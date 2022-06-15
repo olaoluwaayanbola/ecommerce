@@ -1,0 +1,13 @@
+.Products-Container-m{
+    display: flex;
+    padding: 20px;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    padding:25px;
+    gap:8px;
+}
+@media screen and (max-width:"480px") {
+    .Products-Container-m{
+        flex-direction: column;
+    }
+}
