@@ -65,9 +65,18 @@
 }
 @media screen and(max-width:"480px") {
     .Footer-container{
+        flex-direction: column;
         .center{
             display: none !important;
             background-color: aquamarine;
         }
+        .right{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            width: 110%;
+        }
+
     }
 }
