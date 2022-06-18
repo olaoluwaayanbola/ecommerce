@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require("mongoose")
 const dotenv = require('dotenv');
-const port = 5000;
+const port = 3000;
 const Router = require('./Router/User')
 
 dotenv.config()
@@ -13,10 +13,13 @@ mongoose.connect(process.env.MONGODB_URL)
 .then(()=>console.log("DB CONNECTED"))
 .catch((err)=>console.log(`DB CONNECT ${err}`))
 
+// enables post with with json
+app.use(express.json())
+// Testing if port was working
 app.listen(port,()=>{
     console.log(`hello ${port}`)
 })
-
-app.get("/api/test",Router)
+//  app.use enanles me to us the import
+app.use("/api/test",Router)
 
 
