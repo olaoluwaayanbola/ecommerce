@@ -1,4 +1,4 @@
-const expressRoute = require('express').Router();
+const expressRoute = require("express").Router();
 const User = require("../model/User");
 
 const {
@@ -76,11 +76,10 @@ expressRoute.get("/stats", async (req, res) => {
         },
       },
     ]);
-    res.status(200).json(data)
+    res.status(200).json(data);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-
-module.exports = expressRoute
+module.exports = expressRoute;
