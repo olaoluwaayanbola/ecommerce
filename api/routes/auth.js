@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const User = require("../model/User");
 const CryptoJS = require("crypto-js");
-const { json } = require("express");
+const {json} = require("express");
+const jwt = require("jsonwebtoken");
 //REGISTER
 //create user with body and encrypt password with crypto-js
 router.post("/register", async (req, res) => {
@@ -44,8 +45,20 @@ router.post('/login', async (req, res) => {
     if( hashedPassword !== req.body.password ){
       response.status(401).json("Wrong passwords");
     }
-    
-    res.status(200).json(user)
+    //user _data from mongodb request userid or admin status to make password    
+    const accessToken = jwt.sign(
+      {
+          id: user._id,
+          isAdmin: user.isAdmin,
+      },
+      "laolu",
+          {expiresIn:"3d"}
+      );
+    // // mongodb saves files into a doc object thats why it is user_doc
+    const { password, ...others } = user._doc;
+    //using others as response in an effort tosave passwords from being exposed
+    res.status(200).json({...others, accessToken});
+
   }catch(err){
     res.status(500).json(err);
 }
