@@ -1,53 +1,52 @@
-.Cart-Box{
-    height: 90vh;
-    padding: 25px;
-    h2{
-        font-weight: 300;
-        text-align: center;
+.Cart-Box {
+  height: 90vh;
+  padding: 25px;
+  h2 {
+    font-weight: 300;
+    text-align: center;
+  }
+  .Top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    .btn-cart {
+      button {
+        padding: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 5px;
+      }
     }
-    .Top{
+    .check button {
+      background-color: black;
+      color: whitesmoke;
+    }
+    .TopLinks {
+      text-align: center;
+      span {
+        text-decoration: underline;
+        cursor: pointer;
+        margin: 0px 10px;
+      }
+    }
+  }
+  .Bottom {
+    display: flex;
+    justify-content: space-between;
+    .Info {
+      flex: 3;
+      .Products {
         display: flex;
-        align-items: center;
         justify-content: space-between;
-        padding: 20px;
-        .btn-cart{
-            button{
-                padding: 10px;
-                font-weight: 600;
-                cursor: pointer;
-                border-radius: 5px;
-            }
+        .ProductDetail {
+          flex: 2;
+          display: flex;
+          img {
+            width: 200px;
+          }
         }
-        .check button{
-            background-color: black;
-            color: whitesmoke;
-            
-        }
-        .TopLinks{
-            text-align: center;
-            span{
-                text-decoration: underline;
-                cursor: pointer;
-                margin: 0px 10px;
-            }
-        }
+      }
     }
-    .Bottom{
-        display: flex;
-        justify-content: space-between;
-        .Info{
-            flex: 3;
-            .Products{
-                display: flex;
-                justify-content: space-between;
-                .ProductDetail {
-                    flex: 2;
-                    display: flex;
-                    img{
-                        width: 200px;
-                    }
-                }
-            }
-        }
-    }
+  }
 }

@@ -1,27 +1,30 @@
-import React from 'react'
-import "./Product.scss"
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import React from "react";
+import "./Product.scss";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
 const Products = () => {
   return (
-    <div className='Products-Container'>
+    <div className="Products-Container">
       <div className="overlay-icons">
         <div className="icon">
-          <ShoppingCartOutlinedIcon/>
+          <ShoppingCartOutlinedIcon />
         </div>
         <div className="icon">
-          <SearchOutlinedIcon/>
+          <SearchOutlinedIcon />
         </div>
         <div className="icon">
-          <FavoriteBorderOutlinedIcon/>
+          <FavoriteBorderOutlinedIcon />
         </div>
       </div>
       <div className="circle"></div>
-      <img src="https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png" alt=" "/>
+      <img
+        src="https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png"
+        alt=" "
+      />
     </div>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;

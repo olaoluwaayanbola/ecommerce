@@ -1,76 +1,76 @@
-.Login-Container{
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(180, 227, 189);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .Wapper{
-        width: 33vw;
-        height: 400px;
-        border-radius: 4px;
-        background-color: rgb(248, 248, 248);
-        text-align: center;
-        padding: 30px;
-        .title h3{
-            color: rgb(0, 0, 0);
-            font-weight: 500;
-            padding-bottom: 25px;
-        }
-        .Form{
-            display: flex;
-            flex-direction:column;
-            gap: 20px;
-            width: 100%;
-            input{
-                width: 80%;
-                margin: auto;
-                border: none;
-                outline: none;
-                border-radius: 4px;
-                border: 1px solid grey;
-                background: transparent;
-                padding: 5px;
-            }
-            .button{
-                display: flex;
-                align-items: center;
-                button{
-                    width: 8vw;
-                    padding: 10px 10px;
-                    margin-bottom: 25px;
-                    margin: auto;
-                    background: transparent; 
-                    border-radius: 4px;
-                }
-            }
-            a{
-                text-decoration: none;
-                color: grey;
-                margin-bottom:10px ;
-                &:hover{
-                    color: rgb(139, 139, 244);
-                }
-            }
-        }
+.Login-Container {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(180, 227, 189);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .Wapper {
+    width: 33vw;
+    height: 400px;
+    border-radius: 4px;
+    background-color: rgb(248, 248, 248);
+    text-align: center;
+    padding: 30px;
+    .title h3 {
+      color: rgb(0, 0, 0);
+      font-weight: 500;
+      padding-bottom: 25px;
     }
+    .Form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      input {
+        width: 80%;
+        margin: auto;
+        border: none;
+        outline: none;
+        border-radius: 4px;
+        border: 1px solid grey;
+        background: transparent;
+        padding: 5px;
+      }
+      .button {
+        display: flex;
+        align-items: center;
+        button {
+          width: 8vw;
+          padding: 10px 10px;
+          margin-bottom: 25px;
+          margin: auto;
+          background: transparent;
+          border-radius: 4px;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: grey;
+        margin-bottom: 10px;
+        &:hover {
+          color: rgb(139, 139, 244);
+        }
+      }
+    }
+  }
 }
 
-@media screen and (max-width:"480px") {
-    .Login-Container{
-        .Wapper{
-            width: 80vw;
-            height: 75vh;
-            .Form{
-                .button{
-                    button{
-                        width: 50%;
-                    }
-                }
-                a{
-                    margin-bottom:0px ;
-                }
-            }
+@media screen and (max-width: "480px") {
+  .Login-Container {
+    .Wapper {
+      width: 80vw;
+      height: 75vh;
+      .Form {
+        .button {
+          button {
+            width: 50%;
+          }
         }
+        a {
+          margin-bottom: 0px;
+        }
+      }
     }
+  }
 }
