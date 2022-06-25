@@ -1,9 +1,9 @@
-import RemoveIcon from '@mui/icons-material/Remove';
-import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from "@mui/icons-material/Remove";
+import AddIcon from "@mui/icons-material/Add";
 import styled from "styled-components";
 import { Footer } from "../../Components/Footer/Footer";
 import Navbar from "../../Components/Nabar/Navbar";
-import { mobile } from './responsive';
+import { mobile } from "./responsive";
 
 const Container = styled.div``;
 
@@ -47,7 +47,6 @@ const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
   ${mobile({ flexDirection: "column" })}
-
 `;
 
 const Info = styled.div`
@@ -187,7 +186,7 @@ const Cart = () => {
               </ProductDetail>
               <PriceDetail>
                 <ProductAmountContainer>
-                  <AddIcon/>
+                  <AddIcon />
                   <ProductAmount>2</ProductAmount>
                   <RemoveIcon />
                 </ProductAmountContainer>
