@@ -9,13 +9,26 @@ import Cart from './Pages/Cart/Cart';
 import {
   Routes,
   Route,
-  Link
+  Link,
+  Navigate
 } from "react-router-dom";
 function App() {
+  const user = true
   return (
     <div className="App">
       <Routes>
-        <Route path='/option' element={<Home/>}></Route >
+        <Route path='/' element={<Home />}></Route >
+        <Route path='/cart' element={<Cart />}></Route >
+        <Route path='/Signin' element=
+          {
+            user ? <Navigate to="/" /> : <Login />
+          } />
+        <Route path='/Login' element=
+          {
+            user ? <Navigate to="/" /> : <Login />
+          } />
+        <Route path='/Singleproduct/:productsid' element={<Singleproduct />} />
+        <Route path='/Categorypage/:category' element={<Categorypage />}></Route >
       </Routes>
     </div>
   );

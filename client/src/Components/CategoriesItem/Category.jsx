@@ -1,11 +1,15 @@
 import React from "react";
 import "./Category.scss";
+import { Link ,useParams} from "react-router-dom";
 const Category = () => {
+
   return (
     <div className="Category-Container">
       <div className="overay">
         <h1>lOREM IPSUM</h1>
-        <button>SHOP NOW</button>
+        <Link to = "/cart">
+          <button>SHOP NOW</button>
+        </Link>
       </div>
       <img
         src="https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"

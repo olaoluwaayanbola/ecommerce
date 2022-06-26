@@ -1,9 +1,12 @@
 import React from "react";
+import{ useState} from "react"
 import Navbar from "../../Components/Nabar/Navbar";
 import { Footer } from "../../Components/Footer/Footer";
 import Product from "../../Components/Products/Product";
 import "./Categorypage.scss";
 const Category = () => {
+  const [filter,setFilter] = useState()
+  const handleChange = () =>{}
   return (
     <div>
       <Navbar></Navbar>
@@ -12,7 +15,7 @@ const Category = () => {
         <div className="Filter-box">
           <div className="Fiter-one">
             <span>Filter Products:</span>
-            <select name="" id="">
+            <select name="size" onChange={handleChange} id="">
               <option value="" disabled selected>
                 Color
               </option>
@@ -23,7 +26,7 @@ const Category = () => {
               <option value="">Yellow</option>
               <option value="">Green</option>
             </select>
-            <select name="" id="">
+            <select name="size" onChange={handleChange} id="">
               <option value="">XL</option>
               <option value="">L</option>
               <option value="">MD</option>
@@ -33,7 +36,7 @@ const Category = () => {
           </div>
           <div className="Filter-two">
             <span>Sort Products:</span>
-            <select name="" id="">
+            <select id="">
               <option value="" selected>
                 New
               </option>
