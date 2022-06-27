@@ -16,7 +16,6 @@ const Signin = () => {
         <div className="policy">
           lorenm ipsum adipisci facilis expedita veritatis unde excepturi.
         </div>
-
         <button>CREATE USER</button>
       </div>
     </div>

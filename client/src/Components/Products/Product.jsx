@@ -13,7 +13,7 @@ const Product = ({ Category, filter, Sort }) => {
         const res = await axios.get("http://localhost:3000/api/products");
         console.log(res)
       } catch (err) {
-        console.log(err +"cowww")
+        console.log(err)
       }
     }
     getProducts();
