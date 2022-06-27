@@ -13,7 +13,7 @@ mongoose.connect(process.env.MONGODB_URL)
     .then(() => console.log("DB CONNECTED"))
     .catch((err) => console.log(`DB CONNECT ${err}`))
 
-app.listen(8180);
+app.listen(3000);
 
 app.use(express.json());
 app.use("/api/auth", authRoute);

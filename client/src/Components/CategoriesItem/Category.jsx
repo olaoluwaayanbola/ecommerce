@@ -7,7 +7,7 @@ const Category = () => {
     <div className="Category-Container">
       <div className="overay">
         <h1>lOREM IPSUM</h1>
-        <Link to = "/cart">
+        <Link to = "/Categorypage/hkbvjh">
           <button>SHOP NOW</button>
         </Link>
       </div>
