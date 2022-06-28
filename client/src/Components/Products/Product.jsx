@@ -10,15 +10,12 @@ const Product = ({ Category, filter, Sort }) => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/products");
-        console.log(res)
-      } catch (err) {
-        console.log(err)
-      }
-    }
+        const res = await axios.post("http://localhost:3001/api/products");
+      } catch (err) {}
+    };
     getProducts();
   }, [Category]);
-  
+
   return (
     <div className="Products-Container-m">
       <Products />

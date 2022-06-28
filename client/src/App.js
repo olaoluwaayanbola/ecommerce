@@ -21,7 +21,7 @@ function App() {
         <Route path='/cart' element={<Cart />}></Route >
         <Route path='/Signin' element=
           {
-            user ? <Navigate to="/" /> : <Login />
+          user ? <Navigate to="/" /> : <Signin/>
           } />
         <Route path='/Login' element=
           {
