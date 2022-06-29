@@ -26,7 +26,7 @@ const Signin = () => {
     event.preventDefault();
     console.log(info.email)
     console.log(info.userName)
-    createUserWithEmailAndPassword(auth, info.email, info.password)
+    createUserWithEmailAndPassword(auth, info.email, info.userName)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
