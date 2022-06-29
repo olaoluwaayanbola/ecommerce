@@ -1,38 +1,48 @@
 import React from "react";
 import "./Login.scss";
 import { useState } from "react";
-import {  signInWithEmailAndPassword  } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
-
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { contextAuth } from "../../Context/AuthContext";
+import { Link } from "react-router-dom";
 const Login = () => {
+  const Navigate = useNavigate()
+
+  const {dispatch} = useContext(contextAuth)
+
   const [info, setInfo] = useState({
     username: "",
     email: "",
   });
-  console.log("vop");
+
   const handleForm = (event) => {
     const value = event.target.value;
+
     setInfo({
       ...info,
       [event.target.name]: value,
     });
+
   };
+  
   const handleSubmit = (event) => {
+
     event.preventDefault();
-    console.log(info.email)
-    console.log( info.username)
+
     signInWithEmailAndPassword (auth, info.email, info.username)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
+        dispatch({type:"LOGIN",payload:user})
         console.log(user)
+        Navigate("/")
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode)
-        console.log( errorMessage)
         // ..
       });
   };
@@ -52,12 +62,14 @@ const Login = () => {
           />
           <input
             type="email"
-            placeholder="password"
+            placeholder="email"
             name="email"
             onChange={handleForm}
           />
           <a href="">DO NOT YOU REMEMBER THE PASSWORD?</a>
-          <a href="">CREATE A NEW ACCOUNT</a>
+          <Link to="/Signin">
+            CREATE A NEW ACCOUNT
+          </Link>
           <div className="button">
             <button>SIGIN</button>
           </div>
