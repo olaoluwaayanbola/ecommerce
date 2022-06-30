@@ -5,7 +5,7 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import { db } from "../../firebase";
 import { collection, addDoc } from "firebase/firestore";
-const Products = () => {
+const Products = ({data}) => {
   const handlesubmit = async () => {
     // Add a new document in collection "cities"
     try {
