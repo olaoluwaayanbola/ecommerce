@@ -1,11 +1,9 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
 import "./Products.scss";
 import Products from "../PoductItems/Product";
 import { db } from "../../firebase";
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import { Link } from "react-router-dom";
-import { async } from "@firebase/util";
 
 const Product = ({ Category, filter, Sort }) => {
   const [Productdata, setProductdata] = useState([]);
@@ -13,9 +11,10 @@ const Product = ({ Category, filter, Sort }) => {
   const value = async ()=> {
     const querySnapshot = await getDocs(collection(db, "ecommerce"));
     querySnapshot.forEach((doc) => {
-       <Product data={doc.data()} />
+       <Products data={doc.data()} />
     });
   }
+  value()
   const handlesubmit = async () => {
     // Add a new document in collection "cities"'
     try {
@@ -31,9 +30,14 @@ const Product = ({ Category, filter, Sort }) => {
   };
   return (
     <div className="Products-Container-m">
-      <Link to={`Singleproduct/98y98y`}>
-       <Product/>
-      </Link>
+      <Products />
+      <Products />
+      <Products />
+      <Products />
+      <Products />
+      <Products />
+      <Products />
+      <Products />
     </div>
   );
 };
