@@ -6,6 +6,8 @@ import Categorypage from './Pages/Category/Categorypage';
 import Singleproduct from './Pages/Singleproduct/Singleproduct';
 import Signin from './Pages/Signin/Signin';
 import Cart from './Pages/Cart/Cart';
+import { useContext } from 'react';
+import { contextAuth } from './Context/AuthContext';
 import {
   Routes,
   Route,
@@ -13,20 +15,23 @@ import {
   Navigate
 } from "react-router-dom";
 function App() {
-  const user = false
+  const { currentUser } = useContext(contextAuth)
+  const RouterAuth = ({ children }) => {
+    return currentUser? children : <Navigate to="/Login" />
+  };
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<Home />}></Route >
+        <Route path='/' element=
+          {
+            <RouterAuth>
+              <Home />
+            </RouterAuth>
+          }
+        />
         <Route path='/cart' element={<Cart />}></Route >
-        <Route path='/Signin' element=
-          {
-            user ? <Navigate to="/" /> : <Login />
-          } />
-        <Route path='/Login' element=
-          {
-            user ? <Navigate to="/" /> : <Login />
-          } />
+        <Route path='/Signin' element={<Signin />} />
+        <Route path='/Login' element={<Login />} />
         <Route path='/Singleproduct/:productsid' element={<Singleproduct />} />
         <Route path='/Categorypage/:category' element={<Categorypage />}></Route >
       </Routes>

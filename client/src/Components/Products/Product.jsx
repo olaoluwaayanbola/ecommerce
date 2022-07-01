@@ -1,24 +1,33 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
 import "./Products.scss";
 import Products from "../PoductItems/Product";
+import { db } from "../../firebase";
+import { collection, addDoc, getDocs } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 const Product = ({ Category, filter, Sort }) => {
   const [Productdata, setProductdata] = useState([]);
   const [filteredProducts, setFiltersProducts] = useState({});
-
-  useEffect(() => {
-    const getProducts = async () => {
-      try {
-        const res = await axios.get("http://localhost:3000/api/products");
-        console.log(res)
-      } catch (err) {
-        console.log(err)
-      }
+  const value = async ()=> {
+    const querySnapshot = await getDocs(collection(db, "ecommerce"));
+    querySnapshot.forEach((doc) => {
+       <Products data={doc.data()} />
+    });
+  }
+  value()
+  const handlesubmit = async () => {
+    // Add a new document in collection "cities"'
+    try {
+      const docRef = await addDoc(collection(db, "ecommerce"), {
+        first: "Ada",
+        Product: "JESSIE THUNDER SHOES",
+        img: "htts://d3o2e4jr3mxnm3.cloudfront.net/Mns-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
+      });
+      console.log("Document written with ID: ", docRef);
+    } catch (e) {
+      console.error("Error adding document: ", e);
     }
-    getProducts();
-  }, [Category]);
-  
+  };
   return (
     <div className="Products-Container-m">
       <Products />
