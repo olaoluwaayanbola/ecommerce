@@ -1,19 +1,23 @@
 .Login-Container {
   width: 100vw;
   height: 100vh;
-  background-color: rgb(180, 227, 189);
+  background: #9dbdd2;
+  background: linear-gradient(90deg, #9dbdd2 0%, #378137 80%);
+  background: -webkit-linear-gradient(90deg, #9dbdd2 0%, #378137 80%);
+  background: -moz-linear-gradient(90deg, #9dbdd2 0%, #378137 80%);
   display: flex;
   justify-content: center;
   align-items: center;
   .Wapper {
     width: 33vw;
-    height: 400px;
-    border-radius: 4px;
-    background-color: rgb(248, 248, 248);
+    min-height: 60vh;
+    border-radius: 10px;
+    background-color: rgb(238, 225, 225);
     text-align: center;
     padding: 30px;
     .title h3 {
-      color: rgb(0, 0, 0);
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      color: rgb(119, 116, 131);
       font-weight: 500;
       padding-bottom: 25px;
     }
@@ -42,6 +46,11 @@
           margin: auto;
           background: transparent;
           border-radius: 4px;
+        }
+      }
+      #fpassword {
+        &:hover {
+          cursor: not-allowed;
         }
       }
       a {

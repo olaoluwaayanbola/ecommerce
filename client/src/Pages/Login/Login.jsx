@@ -1,4 +1,3 @@
-import React from "react";
 import "./Login.scss";
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -9,14 +8,12 @@ import { contextAuth } from "../../Context/AuthContext";
 import { Link } from "react-router-dom";
 const Login = () => {
   const Navigate = useNavigate()
-
-  const {dispatch} = useContext(contextAuth)
-
+  const { dispatch } = useContext(contextAuth)
   const [info, setInfo] = useState({
     username: "",
-    email: "",
+    email: null,
   });
-
+  const [wrong, setWrong] = useState();
   const handleForm = (event) => {
     const value = event.target.value;
 
@@ -26,16 +23,14 @@ const Login = () => {
     });
 
   };
-  
+  console.log()
   const handleSubmit = (event) => {
-
     event.preventDefault();
-
-    signInWithEmailAndPassword (auth, info.email, info.username)
+    signInWithEmailAndPassword(auth, info.email, info.username)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        dispatch({type:"LOGIN",payload:user})
+        dispatch({ type: "LOGIN", payload: user })
         console.log(user)
         Navigate("/")
         // ...
@@ -45,10 +40,10 @@ const Login = () => {
         const errorMessage = error.message;
         // ..
       });
+    console.log(wrong)
   };
-
   return (
-    <div className="Login-Container">
+    <div className="Login-Container" >
       <div className="Wapper">
         <div className="title">
           <h3>SIGN-IN</h3>
@@ -66,11 +61,16 @@ const Login = () => {
             name="email"
             onChange={handleForm}
           />
-          <a href="">DO NOT YOU REMEMBER THE PASSWORD?</a>
+          {wrong && <p style={{ color: "red" }}>Fill in the inputs</p>}
+          <a href="" id="fpassword">FORGOT PASSWORD?</a>
           <Link to="/Signin">
             CREATE A NEW ACCOUNT
           </Link>
-          <div className="button">
+          <div className="button" onClick={() => {
+            if (info.email == null) {
+              setWrong(true);
+            }
+          }}>
             <button>SIGIN</button>
           </div>
         </form>
