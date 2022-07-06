@@ -4,7 +4,10 @@
   justify-content: center;
   width: 100vw;
   min-height: 100vh;
-  background-color: rgb(232, 219, 219);
+  background: #9dbdd2;
+  background: linear-gradient(90deg, #9dbdd2 0%, #378137 80%);
+  background: -webkit-linear-gradient(90deg, #9dbdd2 0%, #378137 80%);
+  background: -moz-linear-gradient(90deg, #9dbdd2 0%, #378137 80%);
   .Wrapper {
     width: 40%;
     padding: 20px;
@@ -26,13 +29,15 @@
       }
     }
     h3 {
-      font-size: 24px;
+      font-size: 25px;
       font-weight: 300;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
     button {
       border-radius: 5px;
       padding: 10px 5px;
       margin-top: 20px;
+      background-color: transparent;
     }
   }
 }
