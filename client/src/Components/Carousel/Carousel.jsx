@@ -24,7 +24,7 @@ const Carousel = () => {
         <div className="Sider-Container">
           <div className="Img-container">
             <img
-              src="https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png"
+              src="https://www.pngarts.com/files/1/Waterproof-Coat-PNG-Background-Image.png"
               alt=""
             />
           </div>
@@ -43,7 +43,7 @@ const Carousel = () => {
         <div className="Sider-Container">
           <div className="Img-container">
             <img
-              src="https://www.vintageindustries.nl/download_front/qympzk1762/2217_Arrow_Jacket_Forest.png"
+              src="https://www.pngarts.com/files/1/Cocktail-Dress-Transparent-Images.png"
               alt=""
             />
           </div>
@@ -62,7 +62,7 @@ const Carousel = () => {
         <div className="Sider-Container">
           <div className="Img-container">
             <img
-              src="https://static.wixstatic.com/media/c6dc2b_93e69491181a4784bacf188699b6491d~mv2.jpg/v1/fill/w_1349,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/c6dc2b_93e69491181a4784bacf188699b6491d~mv2.jpg"
+              src="https://www.pngarts.com/files/1/Jacket-PNG-Free-Download.png"
               alt=""
             />
           </div>

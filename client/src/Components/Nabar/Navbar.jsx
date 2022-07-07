@@ -2,6 +2,7 @@ import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Badge from "@mui/material/Badge";
+import { Link } from "react-router-dom";
 import LanguageRoundedIcon from "@mui/icons-material/LanguageRounded";
 import "./Navbar.scss";
 
@@ -11,7 +12,6 @@ const Navbar = () => {
       <div className="Navbar-Left">
         <div className="Lang">
           EN
-          {/* <LanguageRoundedIcon/> */}
         </div>
         <div className="Input-Box-Navabar">
           <input type="text" />
@@ -19,14 +19,28 @@ const Navbar = () => {
         </div>
       </div>
       <div className="Navbar-Center">
-        <div className="Navbar-Nameblock">KARA.O</div>
+        <div className="Navbar-Nameblock">
+          <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
+            ASOTUNTUN.C
+          </Link>
+        </div>
       </div>
       <div className="Navbar-Right">
-        <div className="Navbar-Right-box">REGISTER</div>
-        <div className="Navbar-Right-box">SIGNIN</div>
         <div className="Navbar-Right-box">
-          <Badge badgeContent={4} color="primary">
-            <ShoppingCartOutlinedIcon />
+          <Link to="/Signin" style={{ textDecoration: 'none' }}>
+            REGISTER
+          </Link>
+        </div>
+        <div className="Navbar-Right-box">
+          <Link to="/login" style={{ textDecoration: 'none' }}>
+            SIGNIN
+          </Link>
+        </div>
+        <div className="Navbar-Right-box">
+          <Badge badgeContent={2} color="primary">
+            <Link to="/Cart">
+              <ShoppingCartOutlinedIcon />
+            </Link>
           </Badge>
         </div>
       </div>

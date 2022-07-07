@@ -4,6 +4,7 @@ import Products from "../PoductItems/Product";
 import { db } from "../../firebase";
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import { Link } from "react-router-dom";
+import { ProductImage } from "../CategoriesItem/imageSrc";
 
 const Product = ({ Category, filter, Sort }) => {
   const [Productdata, setProductdata] = useState([]);
@@ -30,14 +31,9 @@ const Product = ({ Category, filter, Sort }) => {
   };
   return (
     <div className="Products-Container-m">
-      <Products />
-      <Products />
-      <Products />
-      <Products />
-      <Products />
-      <Products />
-      <Products />
-      <Products />
+      {ProductImage.map((src) => {
+        return <Products src= {src}/>
+      })}
     </div>
   );
 };

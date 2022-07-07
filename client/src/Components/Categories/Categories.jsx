@@ -1,6 +1,7 @@
 import React from "react";
 import Category from "../CategoriesItem/Category";
 import styled from "styled-components";
+import { ImageSrc } from "../CategoriesItem/imageSrc";
 
 const Categories = () => {
   const style = {
@@ -17,9 +18,9 @@ const Categories = () => {
   `;
   return (
     <Container style={style}>
-      <Category />
-      <Category />
-      <Category />
+      {ImageSrc.map((src) => {
+        return <Category img={src} />
+      })}
     </Container>
   );
 };

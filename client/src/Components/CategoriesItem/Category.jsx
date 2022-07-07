@@ -1,8 +1,8 @@
 import React from "react";
 import "./Category.scss";
 import { Link ,useParams} from "react-router-dom";
-const Category = () => {
-
+const Category = ({img}) => {
+  console.log(img)
   return (
     <div className="Category-Container">
       <div className="overay">
@@ -12,7 +12,7 @@ const Category = () => {
         </Link>
       </div>
       <img
-        src="https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+        src={`${img}`}
         alt=""
       />
     </div>

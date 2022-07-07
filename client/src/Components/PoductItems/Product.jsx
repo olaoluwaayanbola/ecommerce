@@ -5,9 +5,9 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import { db } from "../../firebase";
 import { collection, addDoc } from "firebase/firestore";
-const Products = ({ data }) => {
+const Products = ({ data, src }) => {
+  console.log(src)
   const handlesubmit = async () => {
-    // Add a new document in collection "cities"
     try {
       const docRef = await addDoc(collection(db, "ecommerce"), {
         first: "Ada",
@@ -19,10 +19,8 @@ const Products = ({ data }) => {
       console.error("Error adding document: ", e);
     }
   };
-  console.log(data + "jope")
   return (
     <div className="Products-Container">
-      {/* <Link to> */}
       <div className="overlay-icons">
         <div className="icon">
           <ShoppingCartOutlinedIcon />
@@ -36,10 +34,9 @@ const Products = ({ data }) => {
       </div>
       <div className="circle"></div>
       <img
-        src="https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png"
+        src={`${src}`}
         alt=" "
       />
-      {/* </Link> */}
     </div>
   );
 };
