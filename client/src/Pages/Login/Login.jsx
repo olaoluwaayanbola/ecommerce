@@ -23,7 +23,6 @@ const Login = () => {
     });
 
   };
-  console.log()
   const handleSubmit = (event) => {
     event.preventDefault();
     signInWithEmailAndPassword(auth, info.email, info.username)
@@ -31,7 +30,6 @@ const Login = () => {
         // Signed in
         const user = userCredential.user;
         dispatch({ type: "LOGIN", payload: user })
-        console.log(user)
         Navigate("/")
         // ...
       })
@@ -40,7 +38,6 @@ const Login = () => {
         const errorMessage = error.message;
         // ..
       });
-    console.log(wrong)
   };
   return (
     <div className="Login-Container" >

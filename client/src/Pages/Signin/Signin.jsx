@@ -3,8 +3,11 @@ import "./Signin.scss";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Signin = () => {
+  const Navigate = useNavigate()
+  const [wrong, setWrong] = useState(false)
   const [info, setInfo] = useState({
     Name: "",
     lastName: "",
@@ -13,7 +16,6 @@ const Signin = () => {
     password: "",
     confirmPassword: "",
   });
-  console.log(info);
   const handleForm = (event) => {
     const value = event.target.value;
     setInfo({
@@ -24,18 +26,17 @@ const Signin = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(info.email)
-    console.log(info.userName)
-    createUserWithEmailAndPassword(auth, info.email, info.userName)
+    createUserWithEmailAndPassword(auth, info.email, info.password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        console.log(user);
+        Navigate("/")
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        setWrong(true)
         console.log(errorCode);
         console.log(errorMessage);
         // ..
@@ -88,6 +89,7 @@ const Signin = () => {
             onChange={handleForm}
             value={info.confirmPassword}
           />
+          {wrong && <p style={{ color: "red" }}>Weak password</p>}
         </form>
         <div className="policy">
           lorenm ipsum adipisci facilis expedita veritatis unde excepturi.
