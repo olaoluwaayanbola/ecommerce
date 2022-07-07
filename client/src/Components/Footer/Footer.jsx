@@ -48,10 +48,10 @@ export const Footer = () => {
         <h3>CONTACT</h3>
         <div className="Contact-Box">
           <div className="Contact-Icon">
-            622 Dixie Path , South Tobinchester 98336
+            888,drive off karim street
           </div>
-          <div className="Contact-Icon">+1 234 56 78</div>
-          <div className="Contact-Icon">contact@lama.dev</div>
+          <div className="Contact-Icon">1-234-5678</div>
+          <div className="Contact-Icon">contact-olaoluwa</div>
           <img src="https://i.ibb.co/Qfvn4z6/payment.png" alt="" />
         </div>
       </div>
